@@ -1,0 +1,114 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Chat</title>
+
+    <link href="/css/bootstrap.css" type="text/css" rel="styleSheet">
+    <link href="/css/litewebchat.min.css" type="text/css" rel="styleSheet">
+    <link href="/css/uikit.min.css" type="text/css" rel="styleSheet">
+    <link href="/css/uikit-rtl.min.css" type="text/css" rel="styleSheet">
+    <link href="/css/index.css" type="text/css" rel="styleSheet">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="/javascripts/bootstrap.min.js"></script>
+    <script src="/javascripts/uikit.min.js"></script>
+    <script src="/javascripts/uikit-icons.min.js"></script>
+
+</head>
+
+<body>
+    <!--登录模态框-->
+    <div class="modal fade modal-con" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="exampleModalLabel">欢迎进入即时通讯系统，请输入以下信息</h4>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="user-head-select" class="control-label" style="display: block;">选择头像:</label>
+                            <!-- Single button -->
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"
+                                    aria-haspopup="true" aria-expanded="false">
+                                    <span class="head-selected">猫咪</span>&nbsp;<span class="caret"></span>
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li class="head-option"><a href="#">猫咪</a></li>
+                                    <li class="head-option"><a href="#">小狗</a></li>
+                                    <li class="head-option"><a href="#">柯南</a></li>
+                                    <li class="head-option"><a href="#">蜡笔小新</a></li>
+                                    <li class="head-option"><a href="#">外国男生</a></li>
+                                    <li class="head-option"><a href="#">外国女生</a></li>
+                                    <li class="head-option"><a href="#">车银优</a></li>
+                                    <li class="head-option"><a href="#">酒井美纪</a></li>
+                                    <li class="head-option"><a href="#">小男孩</a></li>
+                                    <li class="head-option"><a href="#">小女孩</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="recipient-name" class="control-label">用户名:</label>
+                            <input type="text" class="form-control" id="userName" autocomplete="off" >
+                        </div>
+                        <div class="form-group">
+                            <label for="message-text" class="control-label">所在组:</label>
+                            <input type="text" class="form-control" id="userGroup" autocomplete="off" >
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" data-dismiss="alert" class="btn btn-primary" id="sure-button">Sure</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--单聊模态框-->
+    <div class="modal fade" id="toOneModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="exampleModalLabel">发送给他</h4>
+        </div>
+        <div class="modal-body">
+            <form>
+            <div class="form-group">
+                <label for="message-text" class="control-label">Message:</label>
+                <textarea class="form-control" id="to-one-message"></textarea>
+            </div>
+            </form>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary" id="send-btn">Send message</button>
+        </div>
+        </div>
+    </div>
+    </div>
+
+    <!--主内容-->
+    <div class="container">
+        <div class="member-con">
+            <ul id="members">
+            </ul>
+        </div>
+        <div class="chat-con">
+            <div class="lite-chatbox">
+            </div>
+            <form action="" class="chat-form">
+                <textarea id="m" autocomplete="off"></textarea>
+                <img src="/images/up.png" alt="上传" id="upImg" />
+                <input type="file" name="file" id="chooseImage" accept="image/*"/>
+                <button>Send</button>
+            </form>
+        </div>
+    </div>
+</body>
+<script src="/socket.io/socket.io.js"></script>
+<script src="/javascripts/clientChat.js"></script>
+<script src="/javascripts/chat.js"></script>
+
+</html>

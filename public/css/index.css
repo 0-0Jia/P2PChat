@@ -1,0 +1,205 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    position: relative;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 100vh;
+    font: 1em sans-serif;
+    background-image: url("https://s1.ax1x.com/2020/06/03/tUHMAx.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    z-index: 1;
+}
+
+.container {
+    position: relative;
+    width: 80%;
+    height: 92vh;
+    padding: 4vh;
+    margin: 0 auto;
+    z-index: 1;
+}
+
+
+
+/*登录*/
+.login-con {
+    position: absolute;
+    width: 40%;
+    height: 350px;
+    top: 24%;
+    left: 30%;
+    background-color: white;
+    border-radius: 8px;
+    border: 1px solid rgba(82, 82, 82, 0.6);
+    box-shadow: 2px 2px 5px rgba(94, 93, 93, 0.575);
+    z-index: 10;
+}
+
+/*成员框*/
+.member-con {
+    position: relative;
+    float: left;
+    width: 30%;
+    height: 92vh;
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+#members {
+    margin: 0;
+    padding: 0;
+    overflow: auto;
+}
+
+#members li {
+    list-style: none;
+    width: 100%;
+    padding: 10px 20px 0 20px;
+}
+
+#members li:not(:first-child):hover{
+    background-color: white;
+    background: linear-gradient(20deg, #3f8fe1cc 0%, #44d7c9 100%);
+    -webkit-background-clip: text;
+    color: transparent;
+    cursor: pointer;
+}
+
+#members li p {
+    line-height: 16px;
+}
+
+.user-head {
+    float: left;
+    width: 60px;
+    height: 60px;
+}
+.user-name {
+    font-size: 15px;
+    margin: 10px 0 0 0;
+}
+.user-group {
+    font-size: 14px;
+    margin: 10px 0 15px 0;
+}
+#members li .user-info {
+    display: inline-block;
+    margin-left: 20px;
+}
+.afterbegin {
+    background: linear-gradient(20deg, #3f8fe1cc 0%, #44d7c9 100%);
+    color: white;
+}
+
+
+/*聊天框*/
+.chat-con {
+    position: relative;
+    margin-left: 30%;
+    width: 69%;
+    height: 92vh;
+    background-color: rgba(238, 238, 238, 0.7);
+}
+
+.lite-chatbox {
+    overflow: auto;
+    height: 72vh;
+}
+
+.chat-form {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    height: 20vh;
+    border-top: 1px solid rgba(128, 127, 127, 0.8);
+}
+
+.chat-img {
+    max-width: 200px;
+}
+
+.chat-form textarea {
+    border: 0;
+    margin: 1% 1% 46px 1%;
+    padding: 5px 0;
+    width: 97%;
+    height: 70px;
+    background-color: transparent;
+    outline: none;
+    font-size: 16px;
+    resize:none;
+    overflow: hidden;
+}
+
+.chat-form button {
+    display: block;
+    position: absolute;
+    bottom: 0;
+    right: 1%;
+    width: 12%;
+    height: 38px;
+    margin: 1%;
+    outline: none;
+    background: linear-gradient(20deg, #3f8fe1cc 0%, #44d7c9 100%);
+    border: none;
+    padding: 10px;
+    color: white;
+    letter-spacing: 1px;
+}
+
+#messages {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+#messages li {
+    padding: 5px 10px;
+}
+
+#messages li:nth-child(odd) {
+    background: #eee;
+}
+
+
+/*上下线提示框*/
+.alert {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 8;
+    text-align: center;
+}
+
+.uk-notification-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+/*上传图片*/
+#upImg {
+    position: absolute;
+    bottom: 10px;
+    left: 20px;
+    width: 30px;
+    height: 30px;
+}
+#chooseImage {
+    opacity: 0;
+    position: absolute;
+    bottom: 10px;
+    left: 20px;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    z-index: 6;
+}
